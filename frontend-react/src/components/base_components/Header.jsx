@@ -1,12 +1,12 @@
-import React from 'react'
-import ButtonWidget from './ButtonWidget'
+import ButtonWidget from '../custom_widgets/ButtonWidget'
+import { Link } from "react-router-dom"
 
 const Header = () => {
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-body-dark mx-5 py-4 container align-items-start">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-body-dark mx-5 py-4 align-items-start">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#">Navbar</a>
+                    <Link className="navbar-brand" to={"/"}>Navbar</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -30,10 +30,10 @@ const Header = () => {
                             </li>
 
                         </ul>
-                        <form className="d-flex" role="search">
-                            <ButtonWidget text="Register" class="btn-outline-info mx-3" />
-                            <ButtonWidget text="Login" class="btn-info" />
-                        </form>
+                        <div className="d-flex">
+                            <ButtonWidget text="Register" url="/register" class="btn-outline-info mx-3" />
+                            <ButtonWidget text="Login" url="/login" class="btn-info" />
+                        </div>
                     </div>
                 </div>
             </nav>

@@ -1,16 +1,25 @@
-import { useState } from 'react'
 import './assets/css/style.css'
-import Header from './components/Header'
+import Login from './components/auth_components/Login';
+import Register from './components/auth_components/Register';
+import Footer from './components/base_components/Footer';
+import Header from './components/base_components/Header';
 import Main from './components/Main'
-import Footer from './components/Footer'
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
 
   return (
     <>
-      <Header />
-      <Main />
-      <Footer />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Main />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/login' element={<Login />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </>
   )
 }

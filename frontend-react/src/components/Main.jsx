@@ -1,5 +1,5 @@
-import React from 'react'
-import ButtonWidget from './ButtonWidget'
+import ButtonWidget from './custom_widgets/ButtonWidget'
+
 
 const Main = () => {
     return (
