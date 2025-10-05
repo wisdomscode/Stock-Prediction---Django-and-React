@@ -1,0 +1,18 @@
+body {
+    background-color: #212529;
+    color: #ffffff;
+}
+
+.contentBox {
+    background-color: #0c0e0f;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
