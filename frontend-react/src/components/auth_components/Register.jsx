@@ -62,7 +62,7 @@ const Register = () => {
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="">Password</label>
-                                    <input type="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter Email Address" />
+                                    <input type="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter Password" />
                                     <small>{errors.password && <div className="text-danger">{errors.password}</div>}</small>
                                 </div>
 
