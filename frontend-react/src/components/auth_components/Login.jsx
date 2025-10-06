@@ -21,23 +21,22 @@ const Login = () => {
             username, password
         }
 
-        console.log("UserData == ", userData);
+        // console.log("UserData == ", userData);
 
         try {
             const response = await axios.post("http://127.0.0.1:8000/api/v1/token/", userData)
-            localStorage.setItem('accessToken', response.data.access)
-            localStorage.setItem('refreshToken', response.data.refresh)
+            localStorage.setItem('stockAccessToken', response.data.access)
+            localStorage.setItem('stockRefreshToken', response.data.refresh)
 
-            console.log(response.data);
-            console.log("login Successful");
+            // console.log(response.data);
             setIsLoggedIn(true);
 
             setUsername('')
             setPassword('')
-            navigate('/')
+            navigate('/dashboard')
         } catch (error) {
             setLoginFailed(true)
-            console.log("Login error: Invalid credentials",);
+            // console.log("Login error: Invalid credentials",);
 
         } finally {
             setLoading(false);

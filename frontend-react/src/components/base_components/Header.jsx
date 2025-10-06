@@ -8,8 +8,8 @@ const Header = () => {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        localStorage.removeItem('accessToken');
-        localStorage.removeItem('refreshToken');
+        localStorage.removeItem('stockAccessToken');
+        localStorage.removeItem('stockRefreshToken');
 
         setIsLoggedIn(false)
         navigate('/login')
@@ -32,7 +32,7 @@ const Header = () => {
                                         <a className="nav-link active" aria-current="page" href="#">Home</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">Link</a>
+                                        <Link className="nav-link" to="/dashboard">Dashboard</Link>
                                     </li>
                                     <li className="nav-item dropdown">
                                         <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -53,7 +53,7 @@ const Header = () => {
 
                         <div className="d-flex">
                             {isLoggedIn ? (
-                                <button class="btn btn-outline-info mx-3" onClick={handleLogout}>Logout</button>
+                                <button className="btn btn-outline-info mx-3" onClick={handleLogout}>Logout</button>
                             ) : (
                                 <>
                                     <ButtonWidget text="Register" url="/register" class="btn-outline-info mx-3" />

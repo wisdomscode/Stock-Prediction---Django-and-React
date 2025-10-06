@@ -7,6 +7,9 @@ import Main from './components/Main'
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AuthProvider from './providers/AuthProvider';
+import Dashboard from './components/auth_components/Dashboard';
+import PrivateRoute from './providers/PrivateRoute';
+import PublicRoute from './providers/PublicRoute';
 
 function App() {
 
@@ -17,8 +20,9 @@ function App() {
           <Header />
           <Routes>
             <Route path='/' element={<Main />} />
-            <Route path='/register' element={<Register />} />
-            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<PublicRoute><Register /></PublicRoute>} />
+            <Route path='/login' element={<PublicRoute><Login /></PublicRoute>} />
+            <Route path='/dashboard' element={<PrivateRoute><Dashboard /></PrivateRoute>} />
           </Routes>
           <Footer />
         </BrowserRouter>
